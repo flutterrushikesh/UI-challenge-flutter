@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app/view/discography.dart';
 import 'package:music_app/view/discographyrow.dart';
+import 'package:music_app/view/mybottom_sheet.dart';
 import 'package:music_app/view/mysongtitle.dart';
 import 'package:music_app/view/mytitlestyle.dart';
 import 'package:music_app/view/popularsinglesimg.dart';
@@ -229,6 +230,7 @@ class _GallaryScreenState extends State {
           ),
         ],
       ),
+      bottomNavigationBar: const MyBottomSheet(),
       // bottomNavigationBar: BottomNavigationBar(
       //   selectedItemColor: const Color.fromRGBO(230, 154, 21, 1),
 
