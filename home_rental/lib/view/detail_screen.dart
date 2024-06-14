@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:home_rental/view/getstarted_screen.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key});
@@ -15,6 +15,7 @@ class _DetailScreenState extends State<DetailScreen> {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(237, 237, 237, 1),
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: Text(
           'Details',
           style: GoogleFonts.poppins(
@@ -24,7 +25,11 @@ class _DetailScreenState extends State<DetailScreen> {
         ),
         automaticallyImplyLeading: false,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop(MaterialPageRoute(builder: (context) {
+              return GetStartedScreen();
+            }));
+          },
           icon: const Icon(
             Icons.arrow_back_ios,
           ),
