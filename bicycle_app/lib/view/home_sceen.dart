@@ -14,10 +14,6 @@ class _HomeSceenState extends State<HomeSceen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   title:
-      // ),
       body: Stack(
         children: [
           Positioned(
@@ -403,7 +399,6 @@ class _HomeSceenState extends State<HomeSceen> {
           )
         ],
       ),
-
       backgroundColor: const Color.fromRGBO(36, 44, 59, 1),
     );
   }
