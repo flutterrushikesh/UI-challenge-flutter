@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pet_care/my_widgets/my_searchbox.dart';
+import 'package:pet_care/screens/grooming_screen.dart';
 import 'package:pet_care/screens/notification_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pet_care/my_widgets/categorylist.dart';
 import 'package:pet_care/my_widgets/dashboard_adds.dart';
+import 'package:pet_care/screens/traning_screen.dart';
 import 'package:pet_care/screens/veterinary_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -146,6 +148,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   CategoryList(
                     categorypath: 'assets/images/grooming.png',
                     categoryName: 'Grooming',
+                    navigateTo: GroomingScreen(),
                   ),
                   CategoryList(
                     categorypath: 'assets/images/petstore.png',
@@ -154,6 +157,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   CategoryList(
                     categorypath: 'assets/images/training.png',
                     categoryName: 'Traning',
+                    navigateTo: TraningScreen(),
                   ),
                 ],
               ),
@@ -203,6 +207,30 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: const Color.fromRGBO(245, 146, 69, 1),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(100),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.shopping_cart_outlined,
+              color: Colors.white,
+            ),
+            Text(
+              'Shop',
+              style: GoogleFonts.poppins(
+                fontSize: 12,
+                color: Colors.white,
+              ),
+            )
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

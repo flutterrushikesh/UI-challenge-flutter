@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pet_care/my_widgets/my_appbar_title.dart';
 import 'package:pet_care/screens/dashboard_screen.dart';
 import 'package:pet_care/my_widgets/mybackbutton.dart';
 import 'package:pet_care/my_widgets/mynotification_card.dart';
@@ -20,12 +21,8 @@ class _NotificationScreenState extends State {
         leading: const MyBackButton(
           navigateTo: DashboardScreen(),
         ),
-        title: Text(
-          'Notification',
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w500,
-            fontSize: 16,
-          ),
+        title: const MyAppBarText(
+          appbarTitle: 'Natification',
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
