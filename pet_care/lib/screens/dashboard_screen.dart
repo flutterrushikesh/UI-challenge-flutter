@@ -5,6 +5,7 @@ import 'package:pet_care/screens/notification_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pet_care/my_widgets/categorylist.dart';
 import 'package:pet_care/my_widgets/dashboard_adds.dart';
+import 'package:pet_care/screens/shop_screen.dart';
 import 'package:pet_care/screens/traning_screen.dart';
 import 'package:pet_care/screens/veterinary_screen.dart';
 
@@ -208,7 +209,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return const ShopScreen();
+          }));
+        },
         backgroundColor: const Color.fromRGBO(245, 146, 69, 1),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(100),
