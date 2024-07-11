@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,10 +8,10 @@ class ShopScreen extends StatefulWidget {
   const ShopScreen({super.key});
 
   @override
-  State<ShopScreen> createState() => _ShopScreenState();
+  State createState() => _ShopScreenState();
 }
 
-class _ShopScreenState extends State<ShopScreen> {
+class _ShopScreenState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +35,7 @@ class _ShopScreenState extends State<ShopScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      const SizedBox(height: 10),
                       Text(
                         'Hello Sarah',
                         style: GoogleFonts.poppins(
@@ -61,9 +63,32 @@ class _ShopScreenState extends State<ShopScreen> {
             ),
             Positioned(
               top: 90,
-              left: 110,
-              child: TextField(
-                decoration: InputDecoration(),
+              left: 50,
+              child: SizedBox(
+                width: 280,
+                height: 50,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: "Search Something Here...",
+                    hintStyle: GoogleFonts.poppins(
+                      fontSize: 12,
+                      color: const Color.fromRGBO(194, 195, 204, 1),
+                    ),
+                    suffixIcon: const Icon(
+                      Icons.search,
+                      color: Color.fromRGBO(245, 146, 69, 1),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        width: 2,
+                        color: Color.fromRGBO(250, 200, 162, 1),
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ],
