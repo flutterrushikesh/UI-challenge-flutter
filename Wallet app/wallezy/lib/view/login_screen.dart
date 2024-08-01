@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wallezy/view/create_account_screen.dart';
 import 'package:wallezy/view/password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -23,12 +24,10 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 8,
+                  height: MediaQuery.of(context).size.height / 10,
                 ),
                 Image.asset(
                   'assets/logo/TapnPay.png',
-                  height: 25,
-                  color: const Color.fromRGBO(87, 50, 191, 1),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 13,
@@ -98,12 +97,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       TextButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                            return CreateAccScreen();
-                          }))
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return const CreateAccountScreen();
+                          }));
                         },
                         child: Text(
-                          "Forgot password?",
+                          "Create account?",
                           style: GoogleFonts.sora(
                             fontWeight: FontWeight.w600,
                             color: const Color.fromRGBO(29, 98, 202, 1),
@@ -113,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height / 20,
+                    height: MediaQuery.of(context).size.height / 65,
                   ),
                   ElevatedButton(
                     onPressed: () {
