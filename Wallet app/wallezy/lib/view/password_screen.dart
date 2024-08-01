@@ -48,8 +48,6 @@ class _PasswordScreenState extends State<PasswordScreen> {
               children: [
                 Image.asset(
                   'assets/logo/TapnPay.png',
-                  height: 25,
-                  color: const Color.fromRGBO(87, 50, 191, 1),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 13,
