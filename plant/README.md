@@ -1,3 +1,4 @@
 # plant
 
-A new Flutter project.
+Only simple UI design.
+note: No any functionality binded.
