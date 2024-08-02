@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wallezy/view/login_screen.dart';
+import 'package:wallezy/view/my_bottom_navigation.dart';
 import 'package:wallezy/view/otp_screen.dart';
 
 class CreateAccountScreen extends StatefulWidget {
@@ -174,7 +175,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
-                          return const OTPScreen();
+                          return BottomNavBar();
                         },
                       ),
                     );

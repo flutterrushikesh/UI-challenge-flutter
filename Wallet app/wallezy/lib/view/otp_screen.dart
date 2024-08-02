@@ -28,16 +28,14 @@ class _OTPScreenState extends State<OTPScreen> {
 
   void startTimer() {
     isRunningTime = true;
-    Timer _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {
-        if (timeStart > 0) {
-          timeStart--;
-        } else {
-          timer.cancel();
-          isRunningTime = false;
-        }
-      });
-    });
+    // Timer timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    if (timeStart > 0) {
+      timeStart--;
+    } else {
+      // timer.cancel();
+      isRunningTime = false;
+    }
+    // });
   }
 
   @override
@@ -148,10 +146,13 @@ class _OTPScreenState extends State<OTPScreen> {
         child: ElevatedButton(
           onPressed: () {
             Navigator.of(context).pop();
-            Navigator.of(context)
-                .pushReplacement(MaterialPageRoute(builder: (context) {
-              return const MyBottomNavigation();
-            }));
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) {
+                  return BottomNavBar();
+                },
+              ),
+            );
           },
           style: ButtonStyle(
               backgroundColor: const WidgetStatePropertyAll(

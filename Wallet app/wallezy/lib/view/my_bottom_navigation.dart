@@ -1,84 +1,50 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:wallezy/view/history_screen.dart';
 import 'package:wallezy/view/home_screen.dart';
 import 'package:wallezy/view/more_screen.dart';
 
-class MyBottomNavigation extends StatefulWidget {
-  const MyBottomNavigation({super.key});
+void main() => runApp(MaterialApp(home: BottomNavBar()));
 
+class BottomNavBar extends StatefulWidget {
   @override
-  State<MyBottomNavigation> createState() => _MyBottomNavigationState();
+  _BottomNavBarState createState() => _BottomNavBarState();
 }
 
-class _MyBottomNavigationState extends State<MyBottomNavigation> {
-  int selectecIndex = 0;
+class _BottomNavBarState extends State<BottomNavBar> {
+  int page = 0;
+  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   final List<Widget> widgetList = [
     const HomeScreen(),
     const HistoryScreen(),
     const Scaffold(),
     const MoreScreen(),
   ];
-
-  void onTap(index) {
-    log("IN Taped");
-    setState(() {
-      selectecIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: widgetList.elementAt(selectecIndex),
-      bottomNavigationBar: NavigationBar(
-        elevation: 4,
-        labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-
-        backgroundColor: Colors.white,
-        // showSelectedLabels: ,
-        onDestinationSelected: (index) {
-          onTap(index);
-        },
-        selectedIndex: selectecIndex,
-        // animationDuration: Duration(seconds: 2),
-        destinations: [
-          NavigationDestination(
-            icon: Image.asset('assets/icons/home.png'),
-            label: "Home",
-            // enabled: false,
-            selectedIcon: Image.asset(
-              'assets/icons/home.png',
-              color: const Color.fromRGBO(111, 69, 233, 1),
-            ),
-          ),
-          NavigationDestination(
-            icon: Image.asset('assets/icons/history.png'),
-            label: "History",
-            selectedIcon: Image.asset(
-              'assets/icons/history.png',
-              color: const Color.fromRGBO(111, 69, 233, 1),
-            ),
-          ),
-          NavigationDestination(
-            icon: Image.asset('assets/icons/cards.png'),
-            label: "Cards",
-            selectedIcon: Image.asset(
-              'assets/icons/cards.png',
-              color: const Color.fromRGBO(111, 69, 233, 1),
-            ),
-          ),
-          NavigationDestination(
-            icon: Image.asset('assets/icons/more.png'),
-            label: "More",
-            selectedIcon: Image.asset(
-              'assets/icons/more.png',
-              color: const Color.fromRGBO(111, 69, 233, 1),
-            ),
-          ),
+      bottomNavigationBar: CurvedNavigationBar(
+        key: _bottomNavigationKey,
+        index: 0,
+        items: const <Widget>[
+          Icon(Icons.add, size: 30),
+          Icon(Icons.list, size: 30),
+          Icon(Icons.compare_arrows, size: 30),
+          Icon(Icons.call_split, size: 30),
         ],
+        color: Colors.white,
+        buttonBackgroundColor: Colors.white,
+        backgroundColor: Colors.blueAccent,
+        animationCurve: Curves.linear,
+        animationDuration: const Duration(milliseconds: 200),
+        onTap: (index) {
+          setState(() {
+            page = index;
+          });
+        },
+        // letIndexChange: (index) => true,
       ),
+      body: widgetList[page],
     );
   }
 }
