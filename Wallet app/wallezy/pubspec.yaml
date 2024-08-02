@@ -7,6 +7,7 @@ environment:
   sdk: '>=3.4.4 <4.0.0'
 
 dependencies:
+  curved_navigation_bar: ^1.0.6
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.10+1
@@ -20,6 +21,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/logo/
-    - assets/images/
     - assets/icons/
+    - assets/images/
+    - assets/logo/
