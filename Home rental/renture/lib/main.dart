@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:renture/controller/llist_of_features_controller.dart';
 import 'package:renture/controller/most_popular_controller.dart';
 import 'package:renture/controller/nearby_location_controller.dart';
 import 'package:renture/view/get_started_screen.dart';
@@ -22,6 +23,9 @@ class MainApp extends StatelessWidget {
         ),
         Provider(create: (context) {
           return NearbyLocationController();
+        }),
+        Provider(create: (context) {
+          return FeatureController();
         })
       ],
       child: const MaterialApp(

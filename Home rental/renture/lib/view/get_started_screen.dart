@@ -18,10 +18,9 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
         children: [
           Image.asset(
             'assets/images/home.png',
-            width: MediaQuery.of(context).size.width,
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 30,
+            height: MediaQuery.of(context).size.height / 70,
           ),
           Text(
             'Lets find your Paradise',
@@ -31,7 +30,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 50,
+            height: MediaQuery.of(context).size.height / 90,
           ),
           Text(
             'Find your perfect dream space \nwith just a few clicks',
@@ -42,7 +41,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 20,
+            height: MediaQuery.of(context).size.height / 80,
           ),
           ElevatedButton(
             onPressed: () {
