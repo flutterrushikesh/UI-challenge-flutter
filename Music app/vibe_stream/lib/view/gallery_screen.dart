@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'package:vibe_stream/controller/music_list_controller.dart';
 import 'package:vibe_stream/controller/popular_single_controller.dart';
+import 'package:vibe_stream/view/player_screen.dart';
 
 class GalleryScreen extends StatefulWidget {
   const GalleryScreen({super.key});
@@ -98,38 +99,52 @@ class _GalleryScreenState extends State<GalleryScreen> {
                     .listOfMusic
                     .length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    margin: const EdgeInsets.all(5),
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          Provider.of<MusicListController>(context)
-                              .listOfMusic[index]
-                              .lablePath,
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PlayerScreen(
+                                musicListModelObj:
+                                    Provider.of<MusicListController>(context)
+                                        .listOfMusic[index]);
+                          },
                         ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height / 100,
-                        ),
-                        Text(
-                          Provider.of<MusicListController>(context)
-                              .listOfMusic[index]
-                              .musicName,
-                          style: GoogleFonts.inter(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            color: const Color.fromRGBO(203, 200, 200, 1),
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            Provider.of<MusicListController>(context)
+                                .listOfMusic[index]
+                                .lablePath,
                           ),
-                        ),
-                        Text(
-                          "${Provider.of<MusicListController>(context).listOfMusic[index].publishYear}",
-                          style: GoogleFonts.inter(
-                            fontSize: 10,
-                            color: const Color.fromRGBO(132, 125, 125, 1),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height / 100,
                           ),
-                        )
-                      ],
+                          Text(
+                            Provider.of<MusicListController>(context)
+                                .listOfMusic[index]
+                                .musicName,
+                            style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: const Color.fromRGBO(203, 200, 200, 1),
+                            ),
+                          ),
+                          Text(
+                            "${Provider.of<MusicListController>(context).listOfMusic[index].publishYear}",
+                            style: GoogleFonts.inter(
+                              fontSize: 10,
+                              color: const Color.fromRGBO(132, 125, 125, 1),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },
@@ -236,6 +251,43 @@ class _GalleryScreenState extends State<GalleryScreen> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: NavigationBar(
+        // onTap: (index) {
+        //   navigateTo(index);
+        // },
+        // indicatorShape: ,
+
+        backgroundColor: const Color.fromRGBO(19, 19, 19, 1),
+        indicatorColor: const Color.fromRGBO(19, 19, 19, 1),
+        destinations: [
+          NavigationDestination(
+            icon: Image.asset('assets/images/home.png'),
+            label: 'Home',
+            selectedIcon: Image.asset(
+              'assets/images/home.png',
+              color: const Color.fromRGBO(230, 154, 21, 1),
+            ),
+          ),
+          NavigationDestination(
+            icon: Image.asset('assets/images/search.png'),
+            label: '',
+          ),
+          const NavigationDestination(
+            icon: Icon(
+              Icons.favorite_border_outlined,
+              color: Color.fromRGBO(157, 178, 206, 1),
+            ),
+            label: 'Favorite',
+          ),
+          const NavigationDestination(
+            icon: Icon(
+              Icons.person,
+              color: Color.fromRGBO(157, 178, 206, 1),
+            ),
+            label: '',
+          )
+        ],
       ),
     );
   }
