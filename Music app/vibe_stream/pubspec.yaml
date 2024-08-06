@@ -7,10 +7,12 @@ environment:
   sdk: '>=3.4.4 <4.0.0'
 
 dependencies:
+  audio_session: ^0.1.21
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
+  just_audio: ^0.9.37
   provider: ^6.1.2
   smooth_page_indicator: ^1.2.0+3
 
@@ -23,3 +25,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/audio/
