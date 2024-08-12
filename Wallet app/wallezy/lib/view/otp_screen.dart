@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wallezy/controller/latest_transaction_controller.dart';
-import 'package:wallezy/view/home_screen.dart';
+
+import 'package:wallezy/view/my_bottom_sheet.dart';
 
 class OTPScreen extends StatelessWidget {
   const OTPScreen({super.key});
@@ -102,9 +102,8 @@ class OTPScreen extends StatelessWidget {
       bottomSheet: ElevatedButton(
         onPressed: () {
           Get.to(
-            () => HomeScreen(),
+            () => const MyBottomSheet(),
           );
-          Get.put(() => LatestTransactionController());
         },
         style: ButtonStyle(
           shape: WidgetStatePropertyAll(

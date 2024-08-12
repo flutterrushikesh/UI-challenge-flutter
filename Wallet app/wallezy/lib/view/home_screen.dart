@@ -4,10 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wallezy/controller/latest_transaction_controller.dart';
+import 'package:wallezy/view/setting_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final LatestTransactionController obj =
+      Get.put(LatestTransactionController());
+  final LatestTransactionController controllerObj =
       Get.find<LatestTransactionController>();
+
   HomeScreen({super.key});
 
   @override
@@ -33,15 +37,20 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.settings_outlined,
-              color: Colors.white,
-              size: 27,
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Get.to(() => SettingScreen());
+            },
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(
+                Icons.settings_outlined,
+                color: Colors.white,
+                size: 27,
+              ),
             ),
-          )
+          ),
         ],
       ),
       body: Column(
@@ -112,7 +121,8 @@ class HomeScreen extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(15),
               color: Colors.white,
-              child: ListView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   transactionsText("Recent Transfers"),
                   Row(
@@ -153,16 +163,98 @@ class HomeScreen extends StatelessWidget {
                     height: MediaQuery.of(context).size.height / 45,
                   ),
                   transactionsText("Latest Transactions"),
+                  const Padding(
+                    padding: EdgeInsets.all(5),
+                  ),
                   Expanded(
                     child: ListView.builder(
-                      itemCount: obj.list.length,
+                      itemCount: controllerObj.list.length,
                       itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          color: Colors.black,
+                        return SizedBox(
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Image.asset(controllerObj
+                                              .list[index].iconPath),
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              controllerObj.list[index]
+                                                  .nameOfTransactionl,
+                                              style: GoogleFonts.sora(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w600,
+                                                color: const Color.fromRGBO(
+                                                    25, 25, 25, 1),
+                                              ),
+                                            ),
+                                            RichText(
+                                              text: TextSpan(
+                                                text: controllerObj
+                                                    .list[index].date,
+                                                style: GoogleFonts.sora(
+                                                  fontSize: 12,
+                                                  color: const Color.fromRGBO(
+                                                    120,
+                                                    131,
+                                                    141,
+                                                    1,
+                                                  ),
+                                                ),
+                                                children: [
+                                                  TextSpan(
+                                                    text: controllerObj
+                                                        .list[index].time,
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          controllerObj.list[index].amount,
+                                          style: GoogleFonts.sora(
+                                            fontSize: 12,
+                                            color: const Color.fromRGBO(
+                                                184, 50, 50, 1),
+                                          ),
+                                        ),
+                                        const Icon(
+                                          Icons.arrow_forward_ios,
+                                          size: 15,
+                                          color: Color.fromRGBO(83, 93, 102, 1),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                              const Divider(
+                                color: Color.fromRGBO(237, 239, 246, 1),
+                              ),
+                            ],
+                          ),
                         );
                       },
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
