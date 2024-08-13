@@ -32,7 +32,7 @@ class PasswordScreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 2.3,
             width: double.infinity,
             color: const Color.fromRGBO(247, 244, 255, 1),
-            child: Image.asset('assets/logo/mobile.png'),
+            child: Image.asset('assets/images/privacy.png'),
           ),
           Padding(
             padding: const EdgeInsets.all(20),

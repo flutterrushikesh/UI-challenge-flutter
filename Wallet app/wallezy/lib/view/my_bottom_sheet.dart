@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:wallezy/view/history_screen.dart';
 import 'package:wallezy/view/home_screen.dart';
 import 'package:wallezy/view/more_screen.dart';
 
@@ -23,7 +24,7 @@ class MyBottomSheet extends StatelessWidget {
   List<Widget> listOfScreens() {
     return [
       HomeScreen(),
-      const Scaffold(),
+      HistoryScreen(),
       const Scaffold(),
       MoreScreen(),
     ];

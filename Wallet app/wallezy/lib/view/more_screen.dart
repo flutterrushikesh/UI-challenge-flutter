@@ -4,13 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wallezy/controller/more_controller.dart';
 import 'package:wallezy/view/about_screen.dart';
 import 'package:wallezy/view/paybills_screen.dart';
+import 'package:wallezy/view/transfer_screen.dart';
 
 class MoreScreen extends StatelessWidget {
   final MoreController putConroller = Get.put(MoreController());
   final MoreController findController = Get.find<MoreController>();
   final List<Widget> listOfMoreContent = [
     PaybillsScreen(),
-    const Scaffold(),
+    TransferScreen(),
     const Scaffold(),
     const Scaffold(),
     const Scaffold(),

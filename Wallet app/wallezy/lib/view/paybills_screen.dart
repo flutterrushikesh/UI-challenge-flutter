@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wallezy/controller/saved_biller_controller.dart';
 import 'package:wallezy/model/saved_biller_model.dart';
+import 'package:wallezy/view/payment_success_screen.dart';
 
 class PaybillsScreen extends StatelessWidget {
   final SavedBillerController putController = Get.put(SavedBillerController());
@@ -128,7 +129,8 @@ class PaybillsScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      openBottomSheet(findController.listOfBillers[index]);
+                      openBottomSheet(
+                          findController.listOfBillers[index], context);
                     },
                     child: Column(
                       children: [
@@ -194,10 +196,10 @@ class PaybillsScreen extends StatelessWidget {
     );
   }
 
-  void openBottomSheet(SavedBillerModel obj) {
+  void openBottomSheet(SavedBillerModel obj, BuildContext context) {
     Get.bottomSheet(
       Container(
-        height: 500,
+        height: MediaQuery.of(context).size.height / 2.1,
         padding: const EdgeInsets.all(15),
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -248,6 +250,117 @@ class PaybillsScreen extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            Container(
+              width: double.infinity,
+              alignment: Alignment.center,
+              margin: const EdgeInsets.only(top: 15, bottom: 8),
+              padding: const EdgeInsets.all(15),
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(255, 246, 246, 1),
+              ),
+              child: Text(
+                "Due ${obj.due}",
+                style: GoogleFonts.sora(
+                  fontSize: 21,
+                  fontWeight: FontWeight.w600,
+                  color: const Color.fromRGBO(184, 50, 50, 1),
+                ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.only(top: 6, bottom: 8),
+              padding: const EdgeInsets.only(
+                  top: 16, bottom: 16, right: 12, left: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(3),
+                border: Border.all(
+                  color: const Color.fromRGBO(237, 239, 246, 1),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Due date",
+                    style: GoogleFonts.sora(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: const Color.fromRGBO(83, 93, 102, 1),
+                    ),
+                  ),
+                  Text(
+                    obj.dueDate,
+                    style: GoogleFonts.sora(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: const Color.fromRGBO(83, 93, 102, 1),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.only(top: 6, bottom: 8),
+              padding: const EdgeInsets.only(
+                  top: 16, bottom: 16, right: 12, left: 12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(3),
+                border: Border.all(
+                  color: const Color.fromRGBO(237, 239, 246, 1),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Registration no.",
+                    style: GoogleFonts.sora(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: const Color.fromRGBO(83, 93, 102, 1),
+                    ),
+                  ),
+                  Text(
+                    "${obj.registrationNumber}",
+                    style: GoogleFonts.sora(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: const Color.fromRGBO(83, 93, 102, 1),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Get.to(() => PaymentSuccessScreen(), arguments: obj);
+              },
+              child: Container(
+                margin: const EdgeInsets.only(top: 30, bottom: 20),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
+                  color: const Color.fromRGBO(253, 194, 40, 1),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset("assets/logo/secure.png"),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text(
+                        "Secure payment",
+                        style: GoogleFonts.sora(
+                            fontWeight: FontWeight.w600,
+                            color: const Color.fromRGBO(39, 6, 133, 1)),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
