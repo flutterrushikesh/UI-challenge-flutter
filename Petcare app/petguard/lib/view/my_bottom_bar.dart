@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:petguard/view/Shop%20Screen.dart/shop_screen.dart';
 import 'package:petguard/view/dash_board_screen.dart';
 import 'package:petguard/view/veterinary_scree.dart';
 
@@ -46,7 +47,7 @@ class MyBottomNavBar extends StatelessWidget {
     return [
       DashBoardScreen(),
       VeterinaryScreen(),
-      const Scaffold(),
+      ShopScreen(),
       const Scaffold(),
       const Scaffold(),
     ];

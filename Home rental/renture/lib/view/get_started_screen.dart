@@ -16,8 +16,12 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
     return Scaffold(
       body: Column(
         children: [
-          Image.asset(
-            'assets/images/home.png',
+          Container(
+            width: double.infinity,
+            child: Image.asset(
+              'assets/images/home.png',
+              fit: BoxFit.fill,
+            ),
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height / 70,
@@ -41,7 +45,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 80,
+            height: MediaQuery.of(context).size.height / 40,
           ),
           ElevatedButton(
             onPressed: () {

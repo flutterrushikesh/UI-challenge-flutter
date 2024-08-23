@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:petguard/controller/category_controller.dart';
 
+import 'package:petguard/view/notification_screen.dart';
+
 class DashBoardScreen extends StatelessWidget {
   final CategoryController putController = Get.put(CategoryController());
   final CategoryController findController = Get.find<CategoryController>();
@@ -41,7 +43,9 @@ class DashBoardScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => NotificationScreen());
+            },
             icon: Image.asset('assets/icon/bell.png'),
           )
         ],
@@ -146,24 +150,29 @@ class DashBoardScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: findController.listOfCategory.length,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          findController.listOfCategory[index].imagePath,
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height / 100,
-                        ),
-                        Text(
-                          findController.listOfCategory[index].category,
-                          style: GoogleFonts.poppins(
-                            fontSize: 12,
-                            color: Colors.black,
+                  return GestureDetector(
+                    onTap: () async {
+                      Get.to(findController.listOfCategory[index].navigateTo);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            findController.listOfCategory[index].imagePath,
                           ),
-                        )
-                      ],
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height / 100,
+                          ),
+                          Text(
+                            findController.listOfCategory[index].category,
+                            style: GoogleFonts.poppins(
+                              fontSize: 12,
+                              color: Colors.black,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },
@@ -249,7 +258,9 @@ class DashBoardScreen extends StatelessWidget {
                     children: [
                       Text(
                         "Connect and share with \ncommunities!",
-                        style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height / 30,

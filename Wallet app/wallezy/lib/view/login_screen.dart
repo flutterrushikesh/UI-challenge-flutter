@@ -27,7 +27,7 @@ class LoginScreen extends StatelessWidget {
             child: Image.asset('assets/logo/mobile.png'),
           ),
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(MediaQuery.of(context).size.height / 50),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                 Text(
                   "Mobile number",
                   style: GoogleFonts.sora(
-                    fontSize: 12,
+                    fontSize: MediaQuery.of(context).size.width / 40,
                     color: const Color.fromRGBO(25, 25, 25, 1),
                   ),
                 ),
