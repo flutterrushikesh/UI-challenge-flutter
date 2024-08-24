@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:petguard/view/Login%20Screen/Widgets/email_textfield.dart';
 import 'package:petguard/view/Login%20Screen/Widgets/password_textfield.dart';
-import 'package:petguard/view/my_bottom_bar.dart';
+import 'package:petguard/view/Bottom%20Navigation%20Bar/my_bottom_bar.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
