@@ -11,7 +11,10 @@ class GroomingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///MEASURE SCREEN HEIGHT & STORED IN SCREENHEIGHT VARIABLE.
     final double screenHeight = MediaQuery.of(context).size.height;
+
+    ///MEASURE SCREEN WIDTH & STORED IN SCREENWIDTH VARIABLE.
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(245, 245, 247, 1),
@@ -20,6 +23,7 @@ class GroomingScreen extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(245, 245, 247, 1),
         leading: GestureDetector(
           onTap: () {
+            ///RETURN TO PREVIOUS SCREEN
             Get.back();
           },
           child: Container(

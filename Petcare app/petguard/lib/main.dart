@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:petguard/view/splash_screen.dart';
+import 'package:petguard/view/Splash%20Screen/splash_screen.dart';
 
 void main() {
   ///ENTRY POINT OF APPLICATION.

@@ -4,13 +4,20 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:petguard/controller/training_controller.dart';
 
 class TrainingScreen extends StatelessWidget {
+  ///REGISTER A CONTROLLER
+
   final TrainingController putController = Get.put(TrainingController());
+
+  ///FIND A REGISTERED CONTROLLER
   final TrainingController findController = Get.find<TrainingController>();
   TrainingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ///MEASURE HEIGHT OF SCREEN
     final double screenHeight = MediaQuery.of(context).size.height;
+
+    ///MEASURE WIDTH OF SCREEN
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
@@ -18,6 +25,7 @@ class TrainingScreen extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(245, 245, 247, 1),
         leading: GestureDetector(
           onTap: () {
+            ///BACK TO PREVIOUS SCREEN
             Get.back();
           },
           child: Container(

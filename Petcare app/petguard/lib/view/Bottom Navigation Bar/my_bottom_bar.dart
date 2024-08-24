@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-import 'package:petguard/view/Shop%20Screen.dart/shop_screen.dart';
-import 'package:petguard/view/dash_board_screen.dart';
-import 'package:petguard/view/veterinary_scree.dart';
+import 'package:petguard/view/Shop Screen.dart/shop_screen.dart';
+import 'package:petguard/view/Dashboard Screen/dash_board_screen.dart';
 
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar({super.key});
@@ -45,8 +44,8 @@ class MyBottomNavBar extends StatelessWidget {
 
   List<Widget> screenList() {
     return [
-      DashBoardScreen(),
-      VeterinaryScreen(),
+      const DashBoardScreen(),
+      const Scaffold(),
       ShopScreen(),
       const Scaffold(),
       const Scaffold(),

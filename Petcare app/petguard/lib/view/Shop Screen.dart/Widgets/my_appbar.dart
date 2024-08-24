@@ -6,7 +6,10 @@ class MyAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///MEASURE A HEIGHT OF SCREEN & STORED IN SCREENHEIGHT VARIABLE
     final double screenHeight = MediaQuery.of(context).size.height;
+
+    ///MEASURE A HEIGHT OF SCREEN & STORED IN SCREENHEIGHT VARIABLE
     final double screenWidth = MediaQuery.of(context).size.width;
     return Stack(
       alignment: Alignment.center,

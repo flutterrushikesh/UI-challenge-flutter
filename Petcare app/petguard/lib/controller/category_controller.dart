@@ -3,13 +3,14 @@ import 'package:get/get.dart';
 import 'package:petguard/model/category_model.dart';
 import 'package:petguard/view/Grooming%20Screen/grooming_screen.dart';
 import 'package:petguard/view/Training%20Screen/training_screen.dart';
+import 'package:petguard/view/Veterinary%20Screen/veterinary_scree.dart';
 
 class CategoryController extends GetxController {
   List<CategoryModel> listOfCategory = [
     CategoryModel(
       category: "Veterinary",
       imagePath: "assets/images/vetrinary.png",
-      navigateTo: const Scaffold(),
+      navigateTo: const VeterinaryScreen(),
     ),
     CategoryModel(
       category: "Grooming",

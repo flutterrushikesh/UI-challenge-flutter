@@ -4,16 +4,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:petguard/controller/notification_controller.dart';
 
 class NotificationScreen extends StatelessWidget {
+  ///RESISTER A CONTROLLER.
   final NotificationController putController =
       Get.put(NotificationController());
   NotificationScreen({super.key});
 
+  ///FIND A RESISTERED CONTROLLER.
   final NotificationController findController =
       Get.find<NotificationController>();
 
   @override
   Widget build(BuildContext context) {
+    ///MEASURE SCREEN HEIGHT & STORED IN SCREENHEIGHT VARIABLE.
     double screenHeight = MediaQuery.of(context).size.height;
+
+    ///MEASURE SCREEN WIDTH & STORED IN SCREENWIDTH VARIABLE.
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(245, 245, 247, 1),
@@ -22,6 +27,7 @@ class NotificationScreen extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(245, 245, 247, 1),
         leading: GestureDetector(
           onTap: () {
+            ///BACK TO PREVIOUS SCREEN
             Get.back();
           },
           child: Container(
@@ -67,6 +73,7 @@ class NotificationScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      ///TO GET ALL NOTIFICATIONS ON THAT DAY IN LOOP.
                       for (int i = 0;
                           i <
                               findController.listOfNotification[index]

@@ -7,13 +7,20 @@ import 'package:petguard/controller/shop_controller.dart';
 import 'package:petguard/view/Shop%20Screen.dart/Widgets/my_appbar.dart';
 
 class ShopScreen extends StatelessWidget {
+  ///REGISTER A CONTROLLER
+
   final ShopController putController = Get.put(ShopController());
+
+  ///FIND A REGISTERED CONTROLLER
   final ShopController findController = Get.find<ShopController>();
   ShopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ///MEASURE SCREEN WIDTH & STORED IN SCREENHEIGHT VARIABLE.
     final double screenHeight = MediaQuery.of(context).size.height;
+
+    ///MEASURE SCREEN WIDTH & STORED IN SCREENWIDTH VARIABLE.
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(245, 245, 247, 1),
@@ -27,17 +34,15 @@ class ShopScreen extends StatelessWidget {
             child: GridView.custom(
               gridDelegate: SliverWovenGridDelegate.count(
                 crossAxisCount: 2,
-                // mainAxisSpacing: ,
                 crossAxisSpacing: 8,
-                pattern: const [
+                pattern: [
                   WovenGridTile(
-                    0.86,
+                    screenWidth * 0.0022,
                     crossAxisRatio: 0.9,
                   ),
                   WovenGridTile(
-                    1,
+                    screenWidth * 0.0026,
                     crossAxisRatio: 0.9,
-                    // alignment: AlignmentDirectional.centerEnd,
                   ),
                 ],
               ),
