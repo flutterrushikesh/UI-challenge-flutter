@@ -16,6 +16,10 @@ class BookDoctorButton extends StatelessWidget {
         top: screenHeight * 0.012,
         bottom: screenHeight * 0.012,
       ),
+      margin: EdgeInsets.only(
+        top: screenHeight * 0.012,
+        bottom: screenHeight * 0.012,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: const Color.fromRGBO(245, 146, 69, 1),

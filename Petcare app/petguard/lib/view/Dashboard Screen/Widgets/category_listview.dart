@@ -26,7 +26,7 @@ class CategoryListview extends StatelessWidget {
         itemCount: findController.listOfCategory.length,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () async {
+            onTap: () {
               ///NAVIGATE TO RESPECTIVE SCREEN.
               Get.to(
                 findController.listOfCategory[index].navigateTo,

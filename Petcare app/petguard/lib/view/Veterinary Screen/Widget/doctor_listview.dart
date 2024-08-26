@@ -81,7 +81,7 @@ class DoctorListview extends StatelessWidget {
                             findSpecilityController
                                 .listOfDoctor[index].drRating,
                             style: GoogleFonts.poppins(
-                              fontSize: 12,
+                              fontSize: screenWidth * 0.031,
                               color: const Color.fromRGBO(194, 195, 204, 1),
                             ),
                           ),
@@ -89,8 +89,10 @@ class DoctorListview extends StatelessWidget {
                             width: screenWidth * 0.026,
                           ),
                           Image.asset('assets/icon/map pin.png'),
-                          Text(findSpecilityController
-                              .listOfDoctor[index].drLocation),
+                          Text(
+                            findSpecilityController
+                                .listOfDoctor[index].drLocation,
+                          ),
                         ],
                       ),
                     ],

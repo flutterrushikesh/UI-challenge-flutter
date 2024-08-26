@@ -41,7 +41,7 @@ class TitleContainer extends StatelessWidget {
             text: TextSpan(
               text: "In Love With Pets?",
               style: GoogleFonts.poppins(
-                  fontSize: 16,
+                  fontSize: screenWidth * 0.041,
                   fontWeight: FontWeight.w600,
                   color: Colors.black),
               children: [

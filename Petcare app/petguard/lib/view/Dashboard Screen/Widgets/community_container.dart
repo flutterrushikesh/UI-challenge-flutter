@@ -6,10 +6,10 @@ class CommunityContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //measures a height of mobile screen.
+    ///MEASURES HEIGHT OF SCREEN.
     final double screenHeight = MediaQuery.of(context).size.height;
 
-    //measures a width of screen.
+    ///MEASURES
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
@@ -20,7 +20,7 @@ class CommunityContainer extends StatelessWidget {
       ),
       margin: EdgeInsets.only(
         top: screenHeight * 0.014,
-        bottom: screenHeight * 0.025,
+        bottom: screenHeight * 0.05,
       ),
       alignment: Alignment.center,
       decoration: BoxDecoration(

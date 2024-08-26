@@ -61,7 +61,9 @@ class NotificationScreen extends StatelessWidget {
               children: [
                 Text(
                   findController.listOfNotification[index].day,
-                  style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
                 Container(
                   padding: EdgeInsets.all(screenWidth * 0.01),

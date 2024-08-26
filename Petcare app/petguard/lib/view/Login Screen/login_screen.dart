@@ -10,13 +10,13 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //measures a height of mobile screen.
+    ///MEASURES A HEIGHT OF SCREEN.
     final double screenHeight = MediaQuery.of(context).size.height;
 
-    //measures a width of screen.
+    //MEASURES A WIDTH OF SCREEN.
     final double screenWidth = MediaQuery.of(context).size.width;
 
-    //main screen
+    ///MAIN SCREEN
     return Scaffold(
       backgroundColor: const Color.fromRGBO(245, 245, 247, 1),
       appBar: AppBar(
@@ -33,7 +33,12 @@ class LoginScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15),
+          padding: EdgeInsets.only(
+            top: screenHeight * 0.018,
+            bottom: screenHeight * 0.018,
+            right: screenWidth * 0.041,
+            left: screenWidth * 0.041,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -74,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                   text: TextSpan(
                     text: "Forgot password?",
                     style: GoogleFonts.poppins(
-                      fontSize: 12,
+                      fontSize: screenWidth * 0.031,
                       color: const Color.fromRGBO(31, 32, 41, 1),
                     ),
                     children: [
@@ -93,7 +98,7 @@ class LoginScreen extends StatelessWidget {
               ),
               customButtons(
                 buttonName: "LOGIN",
-                goto: const MyBottomNavBar(),
+                goto: MyBottomNavBar(),
                 screenHeight: screenHeight,
                 screenWidth: screenWidth,
               ),
@@ -108,7 +113,7 @@ class LoginScreen extends StatelessWidget {
               ),
               customButtons(
                 buttonName: "LOGIN WITH EMAIL",
-                goto: const MyBottomNavBar(),
+                goto: MyBottomNavBar(),
                 screenHeight: screenHeight,
                 screenWidth: screenWidth,
               ),
@@ -117,7 +122,7 @@ class LoginScreen extends StatelessWidget {
               ),
               customButtons(
                 buttonName: "LOGIN WITH FACEBOOK",
-                goto: const MyBottomNavBar(),
+                goto: MyBottomNavBar(),
                 screenHeight: screenHeight,
                 screenWidth: screenWidth,
               ),
@@ -129,7 +134,7 @@ class LoginScreen extends StatelessWidget {
                   "By continue you agree to our \nTerms & Privacy Policy",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                    fontSize: 12,
+                    fontSize: screenWidth * 0.031,
                     color: const Color.fromRGBO(31, 32, 41, 1),
                   ),
                 ),

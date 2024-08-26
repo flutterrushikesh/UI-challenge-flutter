@@ -11,6 +11,8 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  ///INITSTATE CALLS AUTOMATICALLY NAVIGATE TO
+  ///LOGIN SCREEN.
   @override
   void initState() {
     super.initState();
@@ -23,6 +25,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ///MEASURE HEIGHT OF SCREEN.
+    final double screenHeight = MediaQuery.of(context).size.height;
+
+    ///MEASURE WIDTH OF SCREEN.
+    final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(245, 146, 69, 1),
       body: Center(
@@ -31,12 +38,12 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset('assets/logo/splash.png'),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 30,
+              height: screenHeight * 0.033,
             ),
             Text(
               "PetGuardian",
               style: GoogleFonts.poppins(
-                fontSize: 32,
+                fontSize: screenWidth * 0.082,
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
               ),
@@ -44,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Text(
               "\"Your Pets' Lifelong Protector\"",
               style: GoogleFonts.poppins(
-                fontSize: 16,
+                fontSize: screenWidth * 0.041,
                 fontWeight: FontWeight.w500,
                 color: Colors.white,
               ),

@@ -6,8 +6,11 @@ class AdContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
+    ///MEASURES A HEIGHT OF SCREEN.
+    final double screenHeight = MediaQuery.of(context).size.height;
+
+    ///MEASURES A WIDTH OF SCREEN.
+    final double screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
       padding: EdgeInsets.only(

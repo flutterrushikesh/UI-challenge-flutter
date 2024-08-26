@@ -13,10 +13,10 @@ class DashBoardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //measures a height of mobile screen.
+    ///MEASURES A HEIGHT OF SCREEN.
     final double screenHeight = MediaQuery.of(context).size.height;
 
-    //measures a width of screen.
+    //MEASURE WIDTH OF SCREEN.
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(245, 245, 247, 1),
@@ -36,12 +36,14 @@ class DashBoardScreen extends StatelessWidget {
                 Text(
                   "Hello, Sarah",
                   style: GoogleFonts.poppins(
-                      fontSize: 14, fontWeight: FontWeight.w500),
+                    fontSize: screenWidth * 0.036,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
                 Text(
                   "Good Morning",
                   style: GoogleFonts.poppins(
-                    fontSize: 14,
+                    fontSize: screenWidth * 0.036,
                     color: const Color.fromRGBO(194, 195, 204, 1),
                   ),
                 )
@@ -64,6 +66,7 @@ class DashBoardScreen extends StatelessWidget {
           top: screenHeight * 0.018,
           right: screenWidth * 0.041,
           left: screenWidth * 0.041,
+          bottom: screenHeight * 0.018,
         ),
         child: ListView(
           children: [

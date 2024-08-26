@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -21,19 +20,21 @@ class ServiceGridview extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         return Container(
-          padding:
-              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02),
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height * 0.02,
+          ),
           decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: const [
-                BoxShadow(
-                  color: Color.fromRGBO(22, 34, 51, 0.08),
-                  spreadRadius: -4,
-                  blurRadius: 16,
-                  offset: Offset(0, 16),
-                ),
-              ],),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                color: Color.fromRGBO(22, 34, 51, 0.08),
+                spreadRadius: -4,
+                blurRadius: 16,
+                offset: Offset(0, 16),
+              ),
+            ],
+          ),
           child: Column(
             children: [
               Image.asset(
