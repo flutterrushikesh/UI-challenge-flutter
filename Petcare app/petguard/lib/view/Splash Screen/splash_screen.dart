@@ -3,28 +3,22 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:petguard/view/Login%20Screen/login_screen.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  ///INITSTATE CALLS AUTOMATICALLY NAVIGATE TO
-  ///LOGIN SCREEN.
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.offAll(
-        () => const LoginScreen(),
-      );
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    ///INITSTATE CALLS AUTOMATICALLY NAVIGATE TO
+    ///LOGIN SCREEN.
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        Get.offAll(
+          () => const LoginScreen(),
+        );
+      },
+    );
+
     ///MEASURE HEIGHT OF SCREEN.
     final double screenHeight = MediaQuery.of(context).size.height;
 

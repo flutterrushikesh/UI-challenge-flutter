@@ -70,7 +70,9 @@ class DashBoardScreen extends StatelessWidget {
         ),
         child: ListView(
           children: [
+            ///
             const SearchTextfield(),
+
             const TitleContainer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

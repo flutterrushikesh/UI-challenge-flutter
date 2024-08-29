@@ -26,6 +26,7 @@ class ShopScreen extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(245, 245, 247, 1),
       body: Column(
         children: [
+          ///APPBAR OF SCREEN.
           const MyAppbar(),
           SizedBox(
             height: screenHeight * 0.023,

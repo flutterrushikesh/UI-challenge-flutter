@@ -48,7 +48,10 @@ class VeterinaryScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            ///CONTAINER WHICH IS SHOWS THE INDRODUCTION.
             const IntroContainer(),
+
+            ///SEATCH TEXTFIELD TO SEARCH DOCTOR.
             const SearchTextfield(),
             SizedBox(
               height: screeHeight * 0.019,
@@ -59,6 +62,8 @@ class VeterinaryScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
+
+            ///LIST OF SERVICES.
             ServiceListview(),
             Text(
               "Best Specialists Nearby",
@@ -69,6 +74,8 @@ class VeterinaryScreen extends StatelessWidget {
             SizedBox(
               height: screeHeight * 0.018,
             ),
+
+            ///SHOWS THE LIST OF DOCTORS.
             DoctorListview(),
           ],
         ),

@@ -52,7 +52,10 @@ class GroomingScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            ///CONTAINER WHICH IS SHOWS THE ADDVERTIS.
             const AdContainer(),
+
+            ///SEARCH TEXTFIELD TO SEARCH GROMMING.
             const SearchTextfield(),
             SizedBox(
               height: screenHeight * 0.012,
@@ -78,6 +81,8 @@ class GroomingScreen extends StatelessWidget {
               height: screenHeight * 0.02,
             ),
             Expanded(
+              ///GRID VIEW WHICH IS  SHOWS THE
+              ///SERVICES IN ROWS & COLUMN.
               child: ServiceGridview(),
             ),
           ],

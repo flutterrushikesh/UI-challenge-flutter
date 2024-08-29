@@ -11,6 +11,9 @@ dependencies:
     sdk: flutter
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
+  onscreen_num_keyboard: ^1.0.4
+  provider: ^6.1.2
+  dropdown_textfield: ^1.2.0
 
 dev_dependencies:
   flutter_test:

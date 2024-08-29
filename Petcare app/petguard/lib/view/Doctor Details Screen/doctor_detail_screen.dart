@@ -98,6 +98,10 @@ class DoctorDetailScreen extends StatelessWidget {
                     SizedBox(
                       height: screenHeight * 0.014,
                     ),
+
+                    ///FEATURES OF DOCTOR WHICH IS GET FROM
+                    ///ON TAP DOCTOR FROM PREVIOUS SCREEN. & PASS THE
+                    ///DOCTOR FEATURE ROW.
                     DoctorFeatures(
                       drLocation: getArgumentObj.drLocation,
                       experience: getArgumentObj.drExperience,
@@ -135,6 +139,8 @@ class DoctorDetailScreen extends StatelessWidget {
                     SizedBox(
                       height: screenHeight * 0.010,
                     ),
+
+                    ///DOCTOR AVAILABLE DATES.
                     const AvailableDates(),
                     SizedBox(
                       height: screenHeight * 0.018,
@@ -148,14 +154,20 @@ class DoctorDetailScreen extends StatelessWidget {
                     SizedBox(
                       height: screenHeight * 0.010,
                     ),
+
+                    ///DOCTOR AVAILABLE TIME.
                     const AvailableTime(),
                     SizedBox(
                       height: screenHeight * 0.050,
                     ),
+
+                    ///A BUTTON WHICH IS TITILED SEELOCATION. TO DOCTOR LOCATION.
                     const SeeLocationButton(),
                     SizedBox(
                       height: screenHeight * 0.012,
                     ),
+
+                    /// A BUTTON WHICH TITLE BOOK DOCTOR. TO BOOK DOCTOR.
                     const BookDoctorButton(),
                   ],
                 ),

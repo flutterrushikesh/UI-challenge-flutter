@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:petguard/view/Login%20Screen/Widgets/email_textfield.dart';
+import 'package:petguard/view/Login%20Screen/Widgets/login_option_buttons.dart';
 import 'package:petguard/view/Login%20Screen/Widgets/password_textfield.dart';
 import 'package:petguard/view/Bottom%20Navigation%20Bar/my_bottom_bar.dart';
 
@@ -46,7 +47,6 @@ class LoginScreen extends StatelessWidget {
               Center(
                 child: Image.asset('assets/logo/Brandmark Logo.png'),
               ),
-
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.034,
               ),
@@ -58,7 +58,10 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.012,
               ),
-              const EmailTextfield(),
+
+              ///TEXTFIEDL FOR GET EMAIL & VALIDATE.
+              ///IF VALIDATION TRUE THEN NAVIGATE TO RESPECTIVE SCREEN.
+              EmailTextfield(),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
@@ -70,7 +73,10 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.012,
               ),
-              const PasswordTextfield(),
+
+              //TEXTFIEDL FOR GET PASSWORD & VALIDATE.
+              ///IF VALIDATION TRUE THEN NAVIGATE TO RESPECTIVE SCREEN.
+              PasswordTextfield(),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.012,
               ),
@@ -96,11 +102,11 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.012,
               ),
-              customButtons(
+
+              ///LOGIN OPTION BUTTON.
+              LoginOptionButtons(
                 buttonName: "LOGIN",
                 goto: MyBottomNavBar(),
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.025,
@@ -111,20 +117,20 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.025,
               ),
-              customButtons(
+
+              ///LOGIN OPTION BUTTON.
+              LoginOptionButtons(
                 buttonName: "LOGIN WITH EMAIL",
                 goto: MyBottomNavBar(),
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              customButtons(
+
+              ///LOGIN OPTION BUTTON.
+              LoginOptionButtons(
                 buttonName: "LOGIN WITH FACEBOOK",
                 goto: MyBottomNavBar(),
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
@@ -140,38 +146,6 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  ///SAME BUTTON 3 TIMES
-  Widget customButtons(
-      {required String buttonName,
-      required Widget goto,
-      required double screenHeight,
-      required double screenWidth}) {
-    return GestureDetector(
-      onTap: () {
-        ///ROUTE TO THEIR RESPECTIVE BUTTON INPUT SCREEN.
-        Get.offAll(() => goto);
-      },
-      child: Container(
-        width: double.infinity,
-        alignment: Alignment.center,
-        padding: EdgeInsets.only(
-          top: screenHeight * 0.01,
-          bottom: screenHeight * 0.01,
-        ),
-        decoration: const BoxDecoration(
-          color: Color.fromRGBO(245, 146, 69, 1),
-        ),
-        child: Text(
-          buttonName,
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w600,
-            color: Colors.white,
           ),
         ),
       ),

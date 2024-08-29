@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:transyte/Login Screen/login_screen.dart';
+import 'package:transyte/View/Splash%20Screen/Login%20Screen/login_screen.dart';
 
 class IntroContainer extends StatelessWidget {
   const IntroContainer({super.key});
@@ -62,9 +62,7 @@ class IntroContainer extends StatelessWidget {
             onTap: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (context) {
-                    return LoginScreen();
-                  },
+                  builder: (context) => const LoginScreen(),
                 ),
               );
             },
