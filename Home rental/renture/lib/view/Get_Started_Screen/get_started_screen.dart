@@ -1,22 +1,21 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:renture/view/home_screen.dart';
+import 'package:renture/view/Home_Screen/home_screen.dart';
 
-class GetStartedScreen extends StatefulWidget {
+class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
 
   @override
-  State<GetStartedScreen> createState() => _GetStartedScreenState();
-}
-
-class _GetStartedScreenState extends State<GetStartedScreen> {
-  @override
   Widget build(BuildContext context) {
+    log("${MediaQuery.of(context).size.width}");
+
     return Scaffold(
       body: Column(
         children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             child: Image.asset(
               'assets/images/home.png',
@@ -24,7 +23,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 70,
+            height: MediaQuery.of(context).size.height * 0.014,
           ),
           Text(
             'Lets find your Paradise',
@@ -34,7 +33,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 90,
+            height: MediaQuery.of(context).size.height * 0.01,
           ),
           Text(
             'Find your perfect dream space \nwith just a few clicks',
@@ -45,14 +44,17 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 40,
+            height: MediaQuery.of(context).size.height * 0.04,
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context)
-                  .pushReplacement(MaterialPageRoute(builder: (context) {
-                return const HomeScreen();
-              }));
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const HomeScreen();
+                  },
+                ),
+              );
             },
             style: const ButtonStyle(
               backgroundColor: WidgetStatePropertyAll(
@@ -62,7 +64,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             child: Text(
               'Get Started',
               style: GoogleFonts.poppins(
-                fontSize: 22,
+                fontSize: MediaQuery.of(context).size.width * 0.052,
                 color: Colors.white,
               ),
             ),

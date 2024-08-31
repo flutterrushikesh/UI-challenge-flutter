@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:renture/controller/llist_of_features_controller.dart';
-import 'package:renture/model/most_popular_model.dart';
 
-class DetailsScreen extends StatefulWidget {
+import 'package:renture/model/most_popular_model.dart';
+import 'package:renture/view/Details_Screen/Widget/rent_button.dart';
+
+class DetailsScreen extends StatelessWidget {
   final MostPopularModel obj;
   const DetailsScreen({super.key, required this.obj});
 
-  @override
-  State<DetailsScreen> createState() => _DetailsScreenState();
-}
-
-class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +41,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           children: [
             Center(
               child: Image.asset(
-                widget.obj.imagePath,
+                obj.imagePath,
               ),
             ),
             SizedBox(
@@ -56,7 +51,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  widget.obj.houseName,
+                  obj.houseName,
                   style: GoogleFonts.sora(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
@@ -64,7 +59,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ),
                 RichText(
                   text: TextSpan(
-                    text: "\$ ${widget.obj.price}",
+                    text: "\$ ${obj.price}",
                     style: GoogleFonts.sora(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -85,7 +80,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
             RichText(
               text: TextSpan(
-                text: widget.obj.location,
+                text: obj.location,
                 style: GoogleFonts.sora(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
@@ -93,66 +88,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ),
                 children: [
                   TextSpan(
-                    text: widget.obj.type,
+                    text: obj.type,
                   ),
                 ],
               ),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height / 40,
-            ),
-            SizedBox(
-              height: 150,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: Provider.of<FeatureController>(context)
-                    .listOfFeature
-                    .length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: const EdgeInsets.all(5),
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.white,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          Provider.of<FeatureController>(context)
-                              .listOfFeature[index]
-                              .iconPath,
-                          height: 30,
-                          width: 30,
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height / 80,
-                        ),
-                        Text(
-                          Provider.of<FeatureController>(context)
-                              .listOfFeature[index]
-                              .iconName,
-                          style: GoogleFonts.sora(
-                            fontWeight: FontWeight.w600,
-                            color: const Color.fromRGBO(90, 90, 90, 1),
-                          ),
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height / 50,
-                        ),
-                        Text(
-                          "${Provider.of<FeatureController>(context).listOfFeature[index].count}",
-                          style: GoogleFonts.sora(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        )
-                      ],
-                    ),
-                  );
-                },
-              ),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height / 40,
@@ -169,21 +111,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
           ],
         ),
       ),
-      bottomSheet: ElevatedButton(
-        onPressed: () {},
-        style: const ButtonStyle(
-          backgroundColor: WidgetStatePropertyAll(
-            Color.fromRGBO(32, 169, 247, 1),
-          ),
-        ),
-        child: Text(
-          "Rent now",
-          style: GoogleFonts.poppins(
-            fontSize: 22,
-            color: Colors.white,
-          ),
-        ),
-      ),
+      bottomSheet: const RentButton(),
     );
   }
 }
