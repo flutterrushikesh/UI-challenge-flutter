@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:renture/model/most_popular_model.dart';
 import 'package:renture/view/Details_Screen/Widget/rent_button.dart';
+import 'package:renture/view/Details_Screen/Widget/room_features.dart';
 
 class DetailsScreen extends StatelessWidget {
   final MostPopularModel obj;
@@ -96,6 +97,7 @@ class DetailsScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height / 40,
             ),
+            const RoomFeatures(),
             SizedBox(
               height: MediaQuery.of(context).size.height / 40,
             ),

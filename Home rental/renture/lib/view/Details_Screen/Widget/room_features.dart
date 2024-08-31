@@ -10,11 +10,11 @@ class RoomFeatures extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 150,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: Provider.of<FeatureController>(context).listOfFeature.length,
-        itemBuilder: (context, index) {
-          return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: List.generate(
+          3,
+          (index) => Container(
             margin: const EdgeInsets.all(5),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -55,8 +55,8 @@ class RoomFeatures extends StatelessWidget {
                 )
               ],
             ),
-          );
-        },
+          ),
+        ),
       ),
     );
   }
