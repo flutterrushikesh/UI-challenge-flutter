@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:transyte/Controllers/phone_number_controller.dart';
 
@@ -25,10 +26,11 @@ class NextButton extends StatelessWidget {
 
         if (isValidPhone) {
           // phoneVerification(context);
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const SetPasswordScreen(),
-            ),
+
+          PersistentNavBarNavigator.pushNewScreen(
+            context,
+            screen: const SetPasswordScreen(),
+            pageTransitionAnimation: PageTransitionAnimation.fade,
           );
         }
       },
