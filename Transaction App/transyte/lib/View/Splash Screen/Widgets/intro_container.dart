@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:transyte/View/Splash%20Screen/Login%20Screen/login_screen.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:transyte/View/Login%20Screen/login_screen.dart';
 
 class IntroContainer extends StatelessWidget {
   const IntroContainer({super.key});
@@ -60,10 +61,11 @@ class IntroContainer extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) => const LoginScreen(),
-                ),
+              ///NAVIGATE TO LOGIN OR PHONE NUMBER SCREEN
+              PersistentNavBarNavigator.pushNewScreen(
+                context,
+                screen: const LoginScreen(),
+                pageTransitionAnimation: PageTransitionAnimation.fade,
               );
             },
             child: Container(

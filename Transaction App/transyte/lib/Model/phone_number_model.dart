@@ -1,5 +1,5 @@
 class PhoneNumberModel {
-  List<String> phonenumber = [];
+  String phonenumber = '';
 
   // PhoneNumberModel();
 }

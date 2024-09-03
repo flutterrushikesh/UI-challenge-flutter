@@ -1,0 +1,3 @@
+class PasswordModel {
+  String password = '';
+}
