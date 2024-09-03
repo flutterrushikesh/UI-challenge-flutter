@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:transyte/Controllers/phone_number_controller.dart';
+
+import 'package:transyte/View/Set_Password_Scree/set_password_screen.dart';
 
 class NextButton extends StatelessWidget {
   const NextButton({super.key});
@@ -7,12 +11,27 @@ class NextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ///MEASURES A HEIGHT OF SCREEN.
-    double screenHeight = MediaQuery.of(context).size.height;
+    final double screenHeight = MediaQuery.of(context).size.height;
 
     ///MEASURES A WIDTH OF SCREEN.
-    double screenWidth = MediaQuery.of(context).size.width;
+    final double screenWidth = MediaQuery.of(context).size.width;
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        bool isValidPhone =
+            Provider.of<PhoneNumberController>(context, listen: false)
+                .validatePhoneKey
+                .currentState!
+                .validate();
+
+        if (isValidPhone) {
+          // phoneVerification(context);
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const SetPasswordScreen(),
+            ),
+          );
+        }
+      },
       style: ButtonStyle(
         minimumSize: WidgetStatePropertyAll(Size(
           double.infinity,
@@ -30,15 +49,6 @@ class NextButton extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-
-      //  Container(
-      //   width: double.infinity,
-      //   height: screenHeight * 0.07,
-      //   alignment: Alignment.center,
-      //   decoration: BoxDecoration(
-      //     color: Color.fromRGBO(9, 112, 62, 1),
-      //   ),
-      //   child:
     );
   }
 }

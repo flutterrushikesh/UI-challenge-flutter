@@ -4,8 +4,8 @@ import 'package:onscreen_num_keyboard/onscreen_num_keyboard.dart';
 import 'package:provider/provider.dart';
 import 'package:transyte/Controllers/phone_number_controller.dart';
 
-class NumKeyboardOnScreen extends StatelessWidget {
-  const NumKeyboardOnScreen({super.key});
+class PhoneKeyboardOnScreen extends StatelessWidget {
+  const PhoneKeyboardOnScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,9 @@ class NumKeyboardOnScreen extends StatelessWidget {
     ///MEASURES A WIDTH OF SCREEN.
     double screenWidth = MediaQuery.of(context).size.width;
     return NumericKeyboard(
-      onKeyboardTap: (value) {
+      onKeyboardTap: (digit) {
         Provider.of<PhoneNumberController>(context, listen: false)
-            .onTapNumber(value);
+            .onTapNumber(digit);
       },
       textStyle: GoogleFonts.poppins(
         fontSize: screenWidth * 0.067,
