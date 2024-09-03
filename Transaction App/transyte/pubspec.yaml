@@ -18,6 +18,13 @@ dependencies:
   nested_scroll_view_plus: ^2.0.0
   dropdown_button2: ^2.3.9
   persistent_bottom_nav_bar: ^6.2.1
+  flutter_swipe_button: ^2.1.3
+  ticket_widget: ^1.0.2
+  dotted_line: ^3.2.2
+  qr_code_scanner: ^1.0.1
+  fl_chart: ^0.69.0
+  country_code_picker: ^3.0.0
+
 
 dev_dependencies:
   flutter_test:
