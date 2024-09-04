@@ -36,7 +36,7 @@ class CategoriesContainer extends StatelessWidget {
                   color: Color.fromRGBO(5, 5, 26, 0.08),
                   blurRadius: 30,
                   offset: Offset(0, 7),
-                )
+                ),
               ],
             ),
             child: Image.asset('assets/icon/Camera.png'),

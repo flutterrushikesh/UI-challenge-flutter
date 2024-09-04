@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:provider/provider.dart';
 import 'package:transyte/View/Profile_screen.dart/Widgets/stack_personalinfo.dart';
 import 'package:transyte/View/Profile_screen.dart/Widgets/general_setting.dart';
 
@@ -17,13 +16,14 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(16, 96, 72, 1),
       body: Column(
         children: [
+          ///ALL PERSONAL INFO IN THAT WIDGET.
           const StackPersonalInfo(),
           SizedBox(
             height: screenHeight * 0.4,
           ),
-          Consumer(
-            builder: (context, provider, child) => const GeneralSetting(),
-          ),
+
+          ///GENERAL SETTINGS CONTAINER.
+          const GeneralSetting(),
         ],
       ),
     );

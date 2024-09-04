@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:transyte/View/Home_Screen/Widgets/profile_image.dart';
 import 'package:transyte/View/Profile_Setting_Screen/profile_setting_screen.dart';
+import 'package:transyte/View/Profile_screen.dart/Widgets/my_profile_pic.dart';
 
 class StackPersonalInfo extends StatelessWidget {
   const StackPersonalInfo({super.key});
@@ -30,12 +31,43 @@ class StackPersonalInfo extends StatelessWidget {
             'assets/images/Ellipse 15.png',
           ),
         ),
-        Positioned(
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 50,
+            left: 20,
+            right: 20,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Profile",
+                style: GoogleFonts.poppins(
+                  fontSize: screenWidth * 0.041,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                ),
+              ),
+              GestureDetector(
+                onTap: () => PersistentNavBarNavigator.pushNewScreen(
+                  context,
+                  screen: const ProfileSettingScreen(),
+                  pageTransitionAnimation: PageTransitionAnimation.fade,
+                ),
+                child: const Icon(
+                  Icons.settings_outlined,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned.fill(
           top: screenHeight * 0.1,
-          left: screenWidth * 0.3,
+          // left: screenWidth * 0.0,
           child: Column(
             children: [
-              const ProfileImage(),
+              const MyProfilePic(),
               SizedBox(
                 height: screenHeight * 0.01,
               ),
@@ -60,10 +92,10 @@ class StackPersonalInfo extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: screenHeight * 0.29,
+          top: screenHeight * 0.28,
           left: screenWidth * 0.04,
           child: Container(
-            alignment: Alignment.center,
+            // alignment: Alignment.center,
             padding: EdgeInsets.only(
               top: screenHeight * 0.018,
               bottom: screenHeight * 0.018,
@@ -155,10 +187,12 @@ class StackPersonalInfo extends StatelessWidget {
                   height: screenHeight * 0.01,
                 ),
                 GestureDetector(
-                  onTap: () {
+                  onTap: () async {
                     log("ON Tap");
-                    showModalBottomSheet(
-                        context: context, builder: (context) => Container());
+                    await showModalBottomSheet(
+                      context: context,
+                      builder: (context) => Container(),
+                    );
                   },
                   child: Center(
                     child: Image.asset(
@@ -169,37 +203,6 @@ class StackPersonalInfo extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 50,
-            left: 20,
-            right: 20,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Profile",
-                style: GoogleFonts.poppins(
-                  fontSize: screenWidth * 0.041,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                ),
-              ),
-              GestureDetector(
-                onTap: () => PersistentNavBarNavigator.pushNewScreen(
-                  context,
-                  screen: const ProfileSettingScreen(),
-                  pageTransitionAnimation: PageTransitionAnimation.fade,
-                ),
-                child: const Icon(
-                  Icons.settings_outlined,
-                  color: Colors.white,
-                ),
-              ),
-            ],
           ),
         ),
       ],

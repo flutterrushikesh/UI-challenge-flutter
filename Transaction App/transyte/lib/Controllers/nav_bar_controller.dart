@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:transyte/Model/nav_bar_model.dart';
 import 'package:transyte/View/Card_Screen/card_screen.dart';
+import 'package:transyte/View/Graph_Screen/graph_screen.dart';
 
 import 'package:transyte/View/Home_Screen/home_screen.dart';
 import 'package:transyte/View/Notification_Screen/notification_screen.dart';
@@ -29,7 +30,7 @@ class NavBarController {
 
   List<Widget> screenList = [
     const HomeScreen(),
-    const Scaffold(),
+    const GraphScreen(),
     const ScanQrScreen(),
     const CardScreen(),
     const NotificationScreen(),

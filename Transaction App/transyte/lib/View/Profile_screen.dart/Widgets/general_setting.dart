@@ -15,7 +15,7 @@ class GeneralSetting extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     final GeneralSettingController localObj =
-        Provider.of<GeneralSettingController>(context, listen: false);
+        Provider.of<GeneralSettingController>(context);
     return Expanded(
       child: Container(
         width: double.infinity,

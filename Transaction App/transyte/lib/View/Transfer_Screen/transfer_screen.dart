@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:transyte/View/Menu_Screen/Widgets/back_button.dart';
 import 'package:transyte/View/Transfer_Screen/Widgets/all_contacts.dart';
+import 'package:transyte/View/Transfer_Screen/Widgets/back_button.dart';
 import 'package:transyte/View/Transfer_Screen/Widgets/btm_appbar.dart';
 import 'package:transyte/View/Transfer_Screen/Widgets/recent_contacts.dart';
 import 'package:transyte/View/Transfer_Screen/Widgets/search_contact_textfield.dart';
@@ -23,7 +23,9 @@ class TransferScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
-        leading: const BackToHome(),
+
+        ///TO NAVIGATE PREVIOUS SCREEEN
+        leading: const GreenBackButton(),
         title: Text(
           "Transfer",
           style: GoogleFonts.poppins(

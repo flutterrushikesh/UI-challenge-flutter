@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 import 'package:transyte/Controllers/card_element_controller.dart';
 import 'package:transyte/Controllers/contacts_controller.dart';
 import 'package:transyte/Controllers/general_setting_controller.dart';
+import 'package:transyte/Controllers/money_controller.dart';
 import 'package:transyte/Controllers/nav_bar_controller.dart';
 import 'package:transyte/Controllers/notification_controller.dart';
 import 'package:transyte/Controllers/other_menu_controller.dart';
@@ -47,6 +47,7 @@ class MainApp extends StatelessWidget {
         Provider(create: (context) => QrController()),
         Provider(create: (context) => CardElementController()),
         ChangeNotifierProvider(create: (context) => SettingController()),
+        Provider(create: (context) => MoneyController()),
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,

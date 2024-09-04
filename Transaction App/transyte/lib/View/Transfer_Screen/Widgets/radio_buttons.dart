@@ -11,7 +11,7 @@ class RadioButtons extends StatelessWidget {
     ///GET THE O0BJ OF TRANSFERRADIOCONTROLLER LOCALLY
     ///TO CALLS THE PROPERTY OR METHODS.
     final TransferRadioController localObj =
-        Provider.of<TransferRadioController>(context, listen: false);
+        Provider.of<TransferRadioController>(context);
 
     ///MEASURES A WIDTH OF SCREEN.
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -24,16 +24,18 @@ class RadioButtons extends StatelessWidget {
           scale: 1.3,
           child: Column(
             children: [
-              Radio(
-                value: index,
-                groupValue: localObj.selectedValue,
-                onChanged: (value) => localObj.toggleButton(value, context),
-                activeColor: Colors.white,
-                materialTapTargetSize: MaterialTapTargetSize.padded,
-                fillColor: WidgetStatePropertyAll(
-                  localObj.selectedValue == index
-                      ? Colors.white
-                      : const Color.fromRGBO(255, 255, 255, 0.6),
+              Consumer(
+                builder: (context, provider, child) => Radio(
+                  value: index,
+                  groupValue: localObj.selectedValue,
+                  onChanged: (value) => localObj.toggleButton(value, context),
+                  activeColor: Colors.white,
+                  materialTapTargetSize: MaterialTapTargetSize.padded,
+                  fillColor: WidgetStatePropertyAll(
+                    localObj.selectedValue == index
+                        ? Colors.white
+                        : const Color.fromRGBO(255, 255, 255, 0.6),
+                  ),
                 ),
               ),
               Text(
