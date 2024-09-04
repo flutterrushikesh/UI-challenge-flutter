@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-import 'package:transyte/View/Home_Screen/Widgets/profile_image.dart';
+
 import 'package:transyte/View/Profile_Setting_Screen/profile_setting_screen.dart';
 import 'package:transyte/View/Profile_screen.dart/Widgets/my_profile_pic.dart';
 
