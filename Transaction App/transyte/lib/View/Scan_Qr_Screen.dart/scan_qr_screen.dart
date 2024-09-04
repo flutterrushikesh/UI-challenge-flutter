@@ -11,13 +11,17 @@ class ScanQrScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        ///BACK TO PREVIOUS SCREEN.
         leading: const BackToHome(),
         backgroundColor: Colors.transparent,
       ),
       extendBodyBehindAppBar: true,
       body: const Stack(
         children: [
+          ///OPEN CAMERA & SCAN QR CODE BUTTON.
           ViewQr(),
+
+          ///SCANNED USER DETAILS.
           ScannedUserDetail(),
         ],
       ),

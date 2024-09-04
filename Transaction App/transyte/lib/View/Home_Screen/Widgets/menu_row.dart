@@ -26,6 +26,7 @@ class MenuRow extends StatelessWidget {
           return Column(
             children: [
               GestureDetector(
+                ///NAVIGATE TO RESPECTIVE SCREEN.
                 onTap: () => PersistentNavBarNavigator.pushNewScreen(
                   context,
                   screen: localObj.listOfType[index].respectiveScreen,

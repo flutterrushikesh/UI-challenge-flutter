@@ -60,6 +60,8 @@ class MenuScreen extends StatelessWidget {
             SizedBox(
               height: screenHeight * 0.03,
             ),
+
+            ///SHORTCUT MENU'S.
             const ShortCuts(),
             SizedBox(
               height: screenHeight * 0.02,
@@ -74,6 +76,8 @@ class MenuScreen extends StatelessWidget {
             SizedBox(
               height: screenWidth * 0.06,
             ),
+
+            ///OTHER MENUS.
             const OtherMenu(),
           ],
         ),

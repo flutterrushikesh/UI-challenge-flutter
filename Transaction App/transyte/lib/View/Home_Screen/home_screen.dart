@@ -32,6 +32,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ///TOTAL MONEY SHOW CONTAINER.
           const MoneyTotalContainer(),
           Container(
             decoration: const BoxDecoration(

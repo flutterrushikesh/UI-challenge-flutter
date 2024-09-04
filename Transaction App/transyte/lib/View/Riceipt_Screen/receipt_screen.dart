@@ -45,12 +45,20 @@ class ReceiptScreen extends StatelessWidget {
             SizedBox(
               height: screenHeight * 0.04,
             ),
+
+            ///RECEIPT CONTAINER AND PASS THE WHO'S GENERATE BILL..
             ReceiptContainer(singleContact: singleContact),
             SizedBox(
               height: screenHeight * 0.03,
             ),
+
+            ///CATEGORIES.
             const CategoriesContainer(),
+
+            ///TO PLACE THE AFTER THAT WIDGET IN SCREEN END.
             const Spacer(),
+
+            ///DOWNLOAD INVOICE BUTTON.
             const DownloadInvoice(),
           ],
         ),

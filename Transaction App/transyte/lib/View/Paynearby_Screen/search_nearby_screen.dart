@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:transyte/View/NearbyUser_Screen/nearby_user_screen.dart';
 import 'package:transyte/View/Paynearby_Screen/Widgets/back_to_transferscreen_button.dart';
+import 'package:transyte/View/Paynearby_Screen/Widgets/help_button.dart';
 
 class SearhcNearbyScreen extends StatelessWidget {
   const SearhcNearbyScreen({super.key});
@@ -15,6 +16,7 @@ class SearhcNearbyScreen extends StatelessWidget {
     ///MEASURES A WIDTH OF SCREEN.
     final double screenWidth = MediaQuery.of(context).size.width;
 
+    ///TO NNAVIGATE THE SEARCHED PERSON OR MAP.
     Future.delayed(
       const Duration(seconds: 4),
       () => PersistentNavBarNavigator.pushNewScreen(
@@ -71,25 +73,9 @@ class SearhcNearbyScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor: const WidgetStatePropertyAll(
-                    Color.fromRGBO(9, 112, 62, 1),
-                  ),
-                  minimumSize: WidgetStatePropertyAll(
-                    Size(screenWidth * 0.6, screenHeight * 0.06),
-                  ),
-                ),
-                child: Text(
-                  "NEED HELP?",
-                  style: GoogleFonts.poppins(
-                    fontSize: screenWidth * 0.041,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
-                ),
-              )
+
+              ///HELP BUTTON.
+              const HelpButton(),
             ],
           ),
         ),

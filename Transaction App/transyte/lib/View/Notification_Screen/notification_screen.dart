@@ -37,7 +37,10 @@ class NotificationScreen extends StatelessWidget {
         ),
         child: const Column(
           children: [
+            ///TO SHOW ALL TRANSACTION .
             TransactionNotification(),
+
+            ///TO SHOW USER VERIFICATION STATUS.
             VerificationStatus(),
           ],
         ),

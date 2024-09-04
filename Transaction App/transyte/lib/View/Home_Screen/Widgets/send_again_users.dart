@@ -20,23 +20,26 @@ class SendAgainUsers extends StatelessWidget {
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: List.generate(4, (index) {
-        return Column(
-          children: [
-            Image.asset(localObj.listOfUser[index].userProfile),
-            SizedBox(
-              height: screenHeight * 0.01,
-            ),
-            Text(
-              localObj.listOfUser[index].name,
-              style: GoogleFonts.poppins(
-                fontSize: screenWidth * 0.031,
-                color: const Color.fromRGBO(8, 4, 34, 1),
+      children: List.generate(
+        localObj.listOfUser.length,
+        (index) {
+          return Column(
+            children: [
+              Image.asset(localObj.listOfUser[index].userProfile),
+              SizedBox(
+                height: screenHeight * 0.01,
               ),
-            ),
-          ],
-        );
-      }),
+              Text(
+                localObj.listOfUser[index].name,
+                style: GoogleFonts.poppins(
+                  fontSize: screenWidth * 0.031,
+                  color: const Color.fromRGBO(8, 4, 34, 1),
+                ),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }

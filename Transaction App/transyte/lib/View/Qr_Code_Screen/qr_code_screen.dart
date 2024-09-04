@@ -56,6 +56,7 @@ class QrCodeScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  ///RECEIVER DETAILS.
                   const UserDetail(),
                   SizedBox(
                     height: screenHeight * 0.02,
@@ -102,6 +103,8 @@ class QrCodeScreen extends StatelessWidget {
                 ],
               ),
             ),
+
+            ///BUTTON TO SCAN QRCODE.
             const ScanQrButton(),
           ],
         ),

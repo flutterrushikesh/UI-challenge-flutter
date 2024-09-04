@@ -9,6 +9,7 @@ import 'package:transyte/View/Login%20Screen/Widgets/phone_number_textfield.dart
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
+  @override
   Widget build(BuildContext context) {
     ///MEASURES A HEIGHT OF SCREEN.
     final double screenHeight = MediaQuery.of(context).size.height;

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:transyte/View/My_Bottom_Navbar/my_bottom_navbar.dart';
-
-class FinishButton extends StatelessWidget {
-  const FinishButton({super.key});
+class HelpButton extends StatelessWidget {
+  const HelpButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,31 +12,20 @@ class FinishButton extends StatelessWidget {
     ///MEASURES A WIDTH OF SCREEN.
     final double screenWidth = MediaQuery.of(context).size.width;
     return ElevatedButton(
-      onPressed: () {
-        ///NAVIGATE TO HOMESCREEN.
-        Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(
-            builder: (context) => const MyBottomNavbar(),
-          ),
-          (route) => false,
-        );
-      },
+      onPressed: () {},
       style: ButtonStyle(
-        minimumSize: WidgetStatePropertyAll(
-          Size(
-            double.infinity,
-            screenHeight * 0.07,
-          ),
-        ),
         backgroundColor: const WidgetStatePropertyAll(
           Color.fromRGBO(9, 112, 62, 1),
         ),
+        minimumSize: WidgetStatePropertyAll(
+          Size(screenWidth * 0.6, screenHeight * 0.06),
+        ),
       ),
       child: Text(
-        "FINISH",
+        "NEED HELP?",
         style: GoogleFonts.poppins(
-          fontWeight: FontWeight.w500,
           fontSize: screenWidth * 0.041,
+          fontWeight: FontWeight.w500,
           color: Colors.white,
         ),
       ),

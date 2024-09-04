@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:transyte/Controllers/set_password_controller.dart';
 import 'package:transyte/View/Fingerprint_Auth_Screen.dart/fingerprint_screen.dart';
@@ -24,10 +25,10 @@ class AuthenticateButton extends StatelessWidget {
             localObj.passwordKey.currentState!.validate();
 
         if (isValidPassword) {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const FingerprintScreen(),
-            ),
+          PersistentNavBarNavigator.pushNewScreen(
+            context,
+            screen: const FingerprintScreen(),
+            pageTransitionAnimation: PageTransitionAnimation.fade,
           );
         }
       },

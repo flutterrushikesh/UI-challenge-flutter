@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:transyte/View/Menu_Screen/Widgets/back_button.dart';
 import 'package:transyte/View/Transfer_Screen/Widgets/all_contacts.dart';
+import 'package:transyte/View/Transfer_Screen/Widgets/btm_appbar.dart';
 import 'package:transyte/View/Transfer_Screen/Widgets/recent_contacts.dart';
 import 'package:transyte/View/Transfer_Screen/Widgets/search_contact_textfield.dart';
 import 'package:transyte/View/Transfer_Screen/Widgets/radio_buttons.dart';
@@ -38,6 +39,8 @@ class TransferScreen extends StatelessWidget {
           SizedBox(
             height: screenHeight * 0.02,
           ),
+
+          ///RADIO BUTTONS TO NAVIGATE TO DIFFERENT SCREEN.
           const RadioButtons(),
           SizedBox(
             height: screenHeight * 0.08,
@@ -62,6 +65,8 @@ class TransferScreen extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
+
+                ///SEARCH TEXTFIELD TO SEARCH CONTACT.
                 const SearchContactTextfield(),
                 SizedBox(
                   height: screenHeight * 0.03,
@@ -73,10 +78,11 @@ class TransferScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
+
+                ///MOST USED CONTACTS.
                 const MyContacts(),
                 const Divider(
-                  thickness: 0.5,
-                  height: 0.5,
+                  thickness: 0.2,
                   color: Color.fromRGBO(8, 4, 34, 0.6),
                 ),
                 SizedBox(
@@ -92,40 +98,17 @@ class TransferScreen extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
+
+                ///SAVED CONTACTS
                 const AllContacts(),
               ],
             ),
           ),
         ],
       ),
-      bottomSheet: BottomAppBar(
-        color: Colors.white,
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.only(
-                top: screenHeight * 0.01,
-                bottom: screenHeight * 0.01,
-                right: screenWidth * 0.02,
-                left: screenWidth * 0.02,
-              ),
-              margin: EdgeInsets.only(right: screenWidth * 0.06),
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(9, 112, 62, 1),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.add,
-                color: Colors.white,
-              ),
-            ),
-            Text(
-              "Add Contact",
-              style: GoogleFonts.poppins(),
-            ),
-          ],
-        ),
-      ),
+
+      ///BOTTOM APPBAR.
+      bottomSheet: const BtmAppbar(),
     );
   }
 }

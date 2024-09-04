@@ -25,8 +25,7 @@ class NextButton extends StatelessWidget {
                 .validate();
 
         if (isValidPhone) {
-          // phoneVerification(context);
-
+          ///NAVIGATE TO SETPASSWORD SCREEN TO SET PASSWORD.
           PersistentNavBarNavigator.pushNewScreen(
             context,
             screen: const SetPasswordScreen(),

@@ -18,6 +18,8 @@ class FingerprintScreen extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(246, 246, 246, 1),
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(246, 246, 246, 1),
+
+        ///BACK BUTTON.
         leading: const MyBackButton(),
       ),
       body: Padding(

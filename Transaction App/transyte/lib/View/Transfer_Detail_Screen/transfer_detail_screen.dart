@@ -22,6 +22,8 @@ class TransferDetailScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
+
+        ///BACK TO HOME TRANSFER SCREEN
         leading: const BackToHome(),
         title: Text(
           "Transfer",
@@ -36,6 +38,7 @@ class TransferDetailScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          ///DISPLAYS THE RECIEVER DETAILS.
           EnterAmountContainer(singleContact: singleContact),
           Container(
             padding: EdgeInsets.only(
@@ -47,10 +50,13 @@ class TransferDetailScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
+                ///TO ENTER AMOUT KEYBOARD.
                 const EnterAmountKeyboard(),
                 SizedBox(
                   height: screenHeight * 0.01,
                 ),
+
+                ///SWIPER BUTTON TO PAY.
                 SwiperButton(
                   singleContact: singleContact,
                 ),

@@ -8,13 +8,12 @@ class MyBottomNavbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final NavBarController localObj = Provider.of<NavBarController>(context);
+    ///MAKE CONTROLLER OBJ TO ACECESS THE BOTTOM BAR
+    final NavBarController localObj =
+        Provider.of<NavBarController>(context, listen: false);
     return PersistentTabView(
       context,
       navBarStyle: NavBarStyle.style16,
-
-      // isVisible: false,
-
       items: List.generate(
         localObj.items.length,
         (index) => PersistentBottomNavBarItem(

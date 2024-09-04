@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:transyte/Controllers/card_element_controller.dart';
+// import 'package:provider/provider.dart';
+// import 'package:transyte/Controllers/card_element_controller.dart';
 
 class CardScreen extends StatelessWidget {
   const CardScreen({super.key});
@@ -14,8 +14,8 @@ class CardScreen extends StatelessWidget {
     ///MEASURES A WIDTH OF SCREEN.
     final double screenWidth = MediaQuery.of(context).size.width;
 
-    final CardElementController localObj =
-        Provider.of<CardElementController>(context);
+    // final CardElementController localObj =
+    //     Provider.of<CardElementController>(context);
     return Scaffold(
       backgroundColor: const Color.fromRGBO(16, 96, 72, 1),
       extendBodyBehindAppBar: true,

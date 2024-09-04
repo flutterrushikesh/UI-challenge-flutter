@@ -77,7 +77,7 @@ class ProfileSettingScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       localObj.listOfSetting[index].settings[i].isSwitch
                           ? Switch(
                               activeTrackColor:
