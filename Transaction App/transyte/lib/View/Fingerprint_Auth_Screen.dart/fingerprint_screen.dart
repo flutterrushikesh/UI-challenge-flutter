@@ -15,9 +15,10 @@ class FingerprintScreen extends StatelessWidget {
     ///MEASURES A WIDTH OF SCREEN.
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      // extendBodyBehindAppBar: true,
       backgroundColor: const Color.fromRGBO(246, 246, 246, 1),
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(246, 246, 246, 1),
+        backgroundColor: Colors.transparent,
 
         ///BACK BUTTON.
         leading: const MyBackButton(),
@@ -33,7 +34,7 @@ class FingerprintScreen extends StatelessWidget {
           children: [
             Image.asset('assets/images/fingerprint.png'),
             SizedBox(
-              height: screenHeight * 0.1,
+              height: screenHeight * 0.05,
             ),
             Text(
               "Use Touch ID To \nAuthorise Paymentts",
@@ -44,7 +45,7 @@ class FingerprintScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: screenHeight * 0.018,
+              height: screenHeight * 0.025,
             ),
             Text(
               "Active touch ID so you don’t need to confirm \nyour PIN every time you want to send money",

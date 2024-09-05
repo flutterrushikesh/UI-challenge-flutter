@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
           ///ALL PERSONAL INFO IN THAT WIDGET.
           const StackPersonalInfo(),
           SizedBox(
-            height: screenHeight * 0.4,
+            height: screenHeight * 0.1,
           ),
 
           ///GENERAL SETTINGS CONTAINER.
