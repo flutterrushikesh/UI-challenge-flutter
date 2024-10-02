@@ -62,115 +62,113 @@ class DoctorDetailScreen extends StatelessWidget {
       body: Column(
         children: [
           Image.asset(getArgumentObj.fullImage),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.only(
-                  top: screenHeight * 0.02,
-                  right: screenWidth * 0.046,
-                  left: screenWidth * 0.046,
+          SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.only(
+                top: screenHeight * 0.02,
+                right: screenWidth * 0.046,
+                left: screenWidth * 0.046,
+              ),
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(32),
+                  topRight: Radius.circular(32),
                 ),
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(32),
-                    topRight: Radius.circular(32),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    getArgumentObj.drName,
+                    style: GoogleFonts.poppins(
+                      fontSize: screenWidth * 0.06,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      getArgumentObj.drName,
-                      style: GoogleFonts.poppins(
-                        fontSize: screenWidth * 0.06,
-                        fontWeight: FontWeight.w500,
-                      ),
+                  Text(
+                    getArgumentObj.drType,
+                    style: GoogleFonts.poppins(
+                      fontSize: screenWidth * 0.031,
+                      color: const Color.fromRGBO(194, 195, 204, 1),
                     ),
-                    Text(
-                      getArgumentObj.drType,
-                      style: GoogleFonts.poppins(
-                        fontSize: screenWidth * 0.031,
-                        color: const Color.fromRGBO(194, 195, 204, 1),
-                      ),
-                    ),
-                    SizedBox(
-                      height: screenHeight * 0.014,
-                    ),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.014,
+                  ),
 
-                    ///FEATURES OF DOCTOR WHICH IS GET FROM
-                    ///ON TAP DOCTOR FROM PREVIOUS SCREEN. & PASS THE
-                    ///DOCTOR FEATURE ROW.
-                    DoctorFeatures(
-                      drLocation: getArgumentObj.drLocation,
-                      experience: getArgumentObj.drExperience,
-                      price: getArgumentObj.price,
+                  ///FEATURES OF DOCTOR WHICH IS GET FROM
+                  ///ON TAP DOCTOR FROM PREVIOUS SCREEN. & PASS THE
+                  ///DOCTOR FEATURE ROW.
+                  DoctorFeatures(
+                    drLocation: getArgumentObj.drLocation,
+                    experience: getArgumentObj.drExperience,
+                    price: getArgumentObj.price,
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.014,
+                  ),
+                  Text(
+                    "About",
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
                     ),
-                    SizedBox(
-                      height: screenHeight * 0.014,
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.010,
+                  ),
+                  Text(
+                    getArgumentObj.drAbout,
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.poppins(
+                      fontSize: screenWidth * 0.031,
+                      color: const Color.fromRGBO(194, 195, 204, 1),
                     ),
-                    Text(
-                      "About",
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                      ),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.014,
+                  ),
+                  Text(
+                    "Available Days",
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
                     ),
-                    SizedBox(
-                      height: screenHeight * 0.010,
-                    ),
-                    Text(
-                      getArgumentObj.drAbout,
-                      textAlign: TextAlign.justify,
-                      style: GoogleFonts.poppins(
-                        fontSize: screenWidth * 0.031,
-                        color: const Color.fromRGBO(194, 195, 204, 1),
-                      ),
-                    ),
-                    SizedBox(
-                      height: screenHeight * 0.014,
-                    ),
-                    Text(
-                      "Available Days",
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    SizedBox(
-                      height: screenHeight * 0.010,
-                    ),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.010,
+                  ),
 
-                    ///DOCTOR AVAILABLE DATES.
-                    const AvailableDates(),
-                    SizedBox(
-                      height: screenHeight * 0.018,
+                  ///DOCTOR AVAILABLE DATES.
+                  AvailableDates(),
+                  SizedBox(
+                    height: screenHeight * 0.018,
+                  ),
+                  Text(
+                    "Available Time",
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
                     ),
-                    Text(
-                      "Available Time",
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    SizedBox(
-                      height: screenHeight * 0.010,
-                    ),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.010,
+                  ),
 
-                    ///DOCTOR AVAILABLE TIME.
-                    const AvailableTime(),
-                    SizedBox(
-                      height: screenHeight * 0.050,
-                    ),
+                  ///DOCTOR AVAILABLE TIME.
+                  AvailableTime(),
+                  SizedBox(
+                    height: screenHeight * 0.050,
+                  ),
 
-                    ///A BUTTON WHICH IS TITILED SEELOCATION. TO DOCTOR LOCATION.
-                    const SeeLocationButton(),
-                    SizedBox(
-                      height: screenHeight * 0.012,
-                    ),
+                  ///A BUTTON WHICH IS TITILED SEELOCATION. TO DOCTOR LOCATION.
+                  const SeeLocationButton(),
+                  SizedBox(
+                    height: screenHeight * 0.012,
+                  ),
 
-                    /// A BUTTON WHICH TITLE BOOK DOCTOR. TO BOOK DOCTOR.
-                    const BookDoctorButton(),
-                  ],
-                ),
+                  /// A BUTTON WHICH TITLE BOOK DOCTOR. TO BOOK DOCTOR.
+                  const BookDoctorButton(),
+                ],
               ),
             ),
           ),
